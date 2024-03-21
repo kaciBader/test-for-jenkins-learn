@@ -8,6 +8,12 @@ pipeline {
     stage('build') {
       steps {
         sh 'php --version'
+        input "Does the staging environment look ok?"
+      }
+    }
+    stage('test') {
+      steps{
+        echo 'testing stage'
       }
     }
   }
